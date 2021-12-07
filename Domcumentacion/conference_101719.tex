@@ -1,0 +1,156 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Sistema de detección de anomalías cardíacas a través de latidos del corazón\\
+
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Marin Goycochea Melisa Wendy}
+\IEEEauthorblockA{
+\textit{Universidad Tecnológica del Perú}\\
+Lima, Perú \\
+Email: 1520912@utp.edu.pe}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Arteaga Ramirez Angel}
+\IEEEauthorblockA{
+\textit{Universidad Tecnológica del Perú} \\
+Lima, Perú \\
+Email: 1632107@utp.edu.pe}
+\and
+\IEEEauthorblockN{3\textsuperscript{rd} Rivera Trujillo Aylwin Edithson}
+\IEEEauthorblockA{ 
+\textit{Universidad Tecnológica del Perú}\\
+Lima, Perú \\
+Email: 1623965@utp.edu.pe}
+\and
+\IEEEauthorblockN{4\textsuperscript{th} Renzo Fabricio Garces Alva }
+\IEEEauthorblockA{
+\textit{Universidad Tecnológica del Perú}\\
+Lima, Perú \\
+Email: 18101949@utp.edu.pe}
+
+}
+
+\maketitle
+
+\begin{abstract}
+El presente trabajo propone un sistema de detección de enfermedades mediante el sonido de los latidos del corazón para disminuir las visitas al hospital para la generación del diagnóstico.
+\end{abstract}
+
+\begin{IEEEkeywords}
+corazón; Enfermedades cardíacas; Latidos; Diagnósticos; Anomalías.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Actualmente, en el Perú para que en los hospitales estatales un paciente se realice un diagnóstico debe acercarse al hospital a separar una cita para atención. Llegado el día de atención el médico tomará los síntomas del paciente para mandar a realizar las pruebas en los laboratorios correspondientes. Después de qué el paciente se realice las pruebas debe regresar por los resultados y generar una nueva cita con un médico nuevamente. Dependiendo los resultados se derivará a otras pruebas o se generará el diagnóstico o se descartará enfermedades. Estos procedimientos toman muchos días ya que al ser estatal tiene mucha demanda por lo que es útil detectar anomalías en el menor tiempo posible.
+
+\section{Antecedentes}
+
+\begin{itemize}
+
+\item Detección totalmente automatizada de amiloidosis cardíaca con inteligencia artificial mediante electrocardiogramas y ecocardiogramas
+\item La amiloidosis cardíaca puede ser detectada mediante IA mediante tuberías de detección de CA utilizando modelos de IA con electrocardiogramas (ECG) o ecocardiogramas como entradas
+\item La detección temprana de una insuficiencia cardiaca mediante el uso de una red neuronal convolucional (CNN)
+\item Inteligencia artificial en ecocardiografía: detección, evaluación funcional y diagnóstico de enfermedades
+\item Por medio de la ecografía se puede observar la frecuencia cardíaca y ser analizado mediante IA para detectar, evaluar y diagnosticar enfermedades.
+\item Con el uso de un conjunto de ecografías se busca entrenar una red neuronal para la detección de problemas cardiacos.
+
+\end{itemize}
+
+\section{CONCEPTOS}
+
+
+\subsection{Arritmia}\label{AA}
+Es un trastorno del ritmo cardíaco. El corazón puede latir demasiado rápido (taquicardia), demasiado lento (bradicardia) o de manera irregular.
+
+Una arritmia puede no causar daño, ser una señal de otros problemas cardíacos o un peligro inmediato para su salud.
+
+
+\subsection{Ecocardiograma}
+Es una prueba médica que hace uso del ultrasonido para captar imágenes del corazón, así como también los flujos sanguíneos con el fin de determinar si el paciente presenta alguna anomalía.
+
+
+\subsection{Caso Normal}
+En la categoría Normal hay ruidos cardíacos normales y saludables. Estos pueden contener ruido en el último segundo de la grabación cuando el dispositivo se retira del cuerpo. Pueden contener una variedad de ruidos de fondo (desde el tráfico hasta las radios). También pueden contener ruido aleatorio ocasional correspondiente a la respiración o al rozar el micrófono contra la ropa o la piel. Un sonido cardíaco normal tiene un patrón claro de "lub dub, lub dub", con el tiempo de "lub" a "dub" más corto que el tiempo de "dub" al siguiente "lub" (cuando la frecuencia cardíaca es inferior a 140 latidos por minuto).
+
+
+\subsection{Soplo cardíaco}
+
+Los soplos cardíacos suenan como si hubiera un ruido de "silbido, rugido, retumbar o fluido turbulento" en una de dos ubicaciones temporales: (1) entre "lub" y "dub", o (2) entre "dub" y "lub" ”. Pueden ser un síntoma de muchos trastornos cardíacos, algunos graves. Seguirá habiendo un "lub" y un "dub". Una de las cosas que confunde a las personas sin formación médica es que los soplos ocurren entre lub y dub o entre dub y lub; no en lub y no en dub.
+
+\subsection{Extrasystole}
+Los sonidos de extrasístole pueden aparecer ocasionalmente y pueden identificarse porque hay un ruido cardíaco que está fuera de ritmo y que implica latidos cardíacos adicionales o saltados, p. Ej. un "lub-lub dub" o un "lub dub-dub". (Esto no es lo mismo que un ruido cardíaco adicional, ya que el evento no ocurre con regularidad). Una extrasístole puede no ser un signo de enfermedad. Puede ocurrir normalmente en un adulto y puede ser muy común en niños. Sin embargo, en algunas situaciones, las extrasístoles pueden ser causadas por enfermedades cardíacas. Si estas enfermedades se detectan antes, es probable que el tratamiento sea más eficaz.
+
+\section{METODOLOGÍA}
+
+Se uso la plataforma Kaggle para la extracción de la DB de los sonidos de los latidos de un corazón en formato wav. Luego, los sonidos en formato wav serán convertidos a Mel Frequency Cepstral Coefficient (MFCC).Es utilizada en el campo del procesamiento de sonidos y habla.
+
+Se entrenará el algoritmo usando el conjunto de sonidos de los latidos del corazón obtenidos de uno de los dataset de Kaggle. 
+
+Se distribuirá de la siguiente manera los datos para el uso en nuestro proyecto: 70\% de datos para entrenamiento, 20\% de datos para validación y 10\% de datos para las pruebas.
+
+Se organiza la data en base a los latidos de un corazón sano y  un corazón con arritmias y soplidos. Luego, se le pasará al algoritmo para su entrenamiento y detecte los patrones diferenciales de ambos casos. Será usado las redes de bosque aleatorios.
+
+\section{RESULTADOS}
+
+Se realizó un programa con el lenguaje de programación Python ya que este nos brinda múltiples librerías como Numpy, Pandas, Sklearn, entre otros, para el análisis de datos, entre otras funciones. Tras ejecutar el programa correctamente se nos muestra los siguientes resultados, los cuales serán explicados más abajo.
+
+
+\includegraphics[width=8cm, height=2cm]{1}
+
+\includegraphics[width=8cm, height=2cm]{2}
+
+\includegraphics[width=8cm, height=2cm]{3}
+
+\includegraphics[width=8cm, height=2cm]{4}
+
+
+
+\section{CONCLUSIONES}
+
+\begin{itemize}
+\item Muchas veces los diagnósticos a diferentes problemas cardíacos suelen realizarse muy lentamente y debe pasar por muchos procesos para poder tener los resultados. La inteligencia artificial promete mucho en la medicina, y otros medios, y una de las mejores novedades que trae consigo es que hace más eficiente el reconocimiento de enfermedades como las de corazón, específicamente hablando de arritmia o soplos, como se desarrolla en este trabajo.
+\item Python es un lenguaje de programación reconocido en el área de la inteligencia artificial ya que contiene múltiples librerías a las cuales se puede acceder con facilidad y con el pasar de los años se ha ganado su lugar. Como se vio en este trabajo permite desarrollar programas hasta en el área de la medicina mejorando de esta manera la ayuda a los pacientes.
+\item Por muchos años la detección tardía de una enfermedad cardiaca que una persona pudiera padecer tendría como resultado la muerte de una persona, con la inteligencia artificial muchos de estas complicaciones se ven solucionadas.
+\end{itemize} 
+
+\section*{References}
+
+Please number citations consecutively within brackets \cite{b1}. The 
+sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
+number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
+the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+
+Number footnotes separately in superscripts. Place the actual footnote at 
+the bottom of the column in which it was cited. Do not put footnotes in the 
+abstract or reference list. Use letters for table footnotes.
+
+Unless there are six authors or more give all authors' names; do not use 
+``et al.''. Papers that have not been published, even if they have been 
+submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
+that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
+Capitalize only the first word in a paper title, except for proper nouns and 
+element symbols.
+
+For papers published in translation journals, please give the English 
+citation first, followed by the original foreign-language citation \cite{b6}.
+
+\begin{thebibliography}{00}
+\bibitem{b1} MN Lorentz and BSB Vianna, "Arritmias Cardíacas y Anestesia", Rev Bras Anestesiol, p. 440-448, 2011
+
+\end{thebibliography}
+\vspace{12pt}
+\color{red}
+
+
+\end{document}
